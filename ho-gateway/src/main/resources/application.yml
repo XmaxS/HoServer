@@ -3,10 +3,12 @@ spring:
     name: ho-gateway
 
 server:
-  port: 1112
+  port: 10011
 
 zuul:
   prefix: /api
+  routes:
+    item-service: /item/**
 
 hystrix:
   command:
@@ -19,7 +21,7 @@ hystrix:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:1111/eureka
+      defaultZone: http://127.0.0.1:10010/eureka
 
 ribbon:
   ConnectTimeout: 500        #ribbon链接超时时长

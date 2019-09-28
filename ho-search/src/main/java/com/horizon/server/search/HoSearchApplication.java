@@ -1,15 +1,15 @@
-package com.horizon.server.itemService;
+package com.horizon.server.search;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import tk.mybatis.spring.annotation.MapperScan;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.horizon.server.itemService.mapper")
-public class HoItemService {
+@EnableFeignClients
+public class HoSearchApplication {
     public static void main(String[] args) {
-        SpringApplication.run(HoItemService.class);
+        SpringApplication.run(HoSearchApplication.class);
     }
 }

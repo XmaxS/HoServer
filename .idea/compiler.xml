@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ho-common" />
         <module name="ho-registry" />
+        <module name="ho-item-service" />
+        <module name="ho-common" />
+        <module name="ho-search" />
         <module name="ho-gateway" />
         <module name="ho-item-interface" />
-        <module name="ho-item-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,6 +32,7 @@
       <module name="ho-item-service" options="-parameters" />
       <module name="ho-register" options="-parameters" />
       <module name="ho-registry" options="-parameters" />
+      <module name="ho-search" options="-parameters" />
     </option>
   </component>
 </project>

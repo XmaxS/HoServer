@@ -19,14 +19,10 @@ spring:
       exchange: ho.item.exchange
     publisher-confirms: true
 
-mybatis:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
 server:
   port: 8081
 
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:1111/eureka
+      defaultZone: http://127.0.0.1:10010/eureka

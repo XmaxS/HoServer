@@ -5,6 +5,7 @@ import tk.mybatis.mapper.annotation.KeySql;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Data
 @Table(name = "tb_store")
@@ -17,4 +18,5 @@ public class Store {
     private Character letter;
     private Double longitude;
     private Double latitude;
+    private Date createTime;
 }

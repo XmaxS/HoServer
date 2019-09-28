@@ -8,6 +8,7 @@ import com.horizon.server.itemService.mapper.StoreMapper;
 import com.horizon.server.itemService.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class StoreServiceImpl implements StoreService {
     @Autowired
     private StoreMapper storeMapper;
 
+    @Transactional
     @Override
     public void insertStore(Store store, List<Long> cids) {
         store.setId(null);
@@ -34,6 +36,7 @@ public class StoreServiceImpl implements StoreService {
         }
     }
 
+    @Transactional
     @Override
     public void updateStore(StoreVo storeVo) {
 
@@ -44,6 +47,7 @@ public class StoreServiceImpl implements StoreService {
         store.setLetter(storeVo.getLetter());
         store.setLongitude(storeVo.getLongitude());
         store.setLatitude(storeVo.getLatitude());
+        store.setCreateTime(storeVo.getCreateTime());
 
 //        更新
         int resultCount = storeMapper.updateByPrimaryKey(store);
@@ -63,6 +67,7 @@ public class StoreServiceImpl implements StoreService {
 
     }
 
+    @Transactional
     @Override
     public void deleteStore(Long sid) {
 
