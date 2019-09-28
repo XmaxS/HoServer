@@ -7,6 +7,11 @@
     <groupId>com.horizon.server</groupId>
     <artifactId>HoServer</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>ho-common</module>
+        <module>ho-registry</module>
+        <module>ho-gateway</module>
+    </modules>
     <packaging>pom</packaging>
 
     <parent>
@@ -22,7 +27,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <mysql.version>8.0.16</mysql.version>
-        <mapper.starter.version>2.0.3</mapper.starter.version>
+        <mapper.starter.version>2.1.5</mapper.starter.version>
         <pageHelper.version>1.2.12</pageHelper.version>
     </properties>
 
