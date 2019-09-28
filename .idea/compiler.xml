@@ -10,6 +10,8 @@
         <module name="ho-common" />
         <module name="ho-registry" />
         <module name="ho-gateway" />
+        <module name="ho-item-interface" />
+        <module name="ho-item-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +26,9 @@
       <module name="ho-Common" options="-parameters" />
       <module name="ho-common" options="-parameters" />
       <module name="ho-gateway" options="-parameters" />
+      <module name="ho-item" options="-parameters" />
+      <module name="ho-item-interface" options="-parameters" />
+      <module name="ho-item-service" options="-parameters" />
       <module name="ho-register" options="-parameters" />
       <module name="ho-registry" options="-parameters" />
     </option>

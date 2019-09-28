@@ -11,6 +11,7 @@
         <module>ho-common</module>
         <module>ho-registry</module>
         <module>ho-gateway</module>
+        <module>ho-item</module>
     </modules>
     <packaging>pom</packaging>
 
