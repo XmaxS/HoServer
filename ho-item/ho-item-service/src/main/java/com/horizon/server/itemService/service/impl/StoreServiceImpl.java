@@ -45,6 +45,7 @@ public class StoreServiceImpl implements StoreService {
         sendMessage(store.getId(),"insert");
 
         return resultCount;
+
     }
 
     @Transactional
@@ -142,7 +143,7 @@ public class StoreServiceImpl implements StoreService {
      */
     private void sendMessage(Long id, String type){
         try {
-            amqpTemplate.convertAndSend("item" + type, id);
+            amqpTemplate.convertAndSend("item." + type, id);
         }catch (Exception e){
             log.error("{}店铺消息发送异常，店铺ID：{}",type,id,e);
         }

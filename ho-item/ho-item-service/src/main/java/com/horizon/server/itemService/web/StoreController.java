@@ -4,6 +4,7 @@ import com.horizon.server.itemInterface.pojo.Store;
 import com.horizon.server.itemInterface.vo.StoreVo;
 import com.horizon.server.itemService.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class StoreController {
      * @return
      */
     @PostMapping("/insert")
-    public ResponseEntity<Integer> insertStore(Store store , @RequestParam("cids") List<Long> cids){
+    public ResponseEntity<Integer> insertStore(@RequestBody Store store , @RequestParam("cids") List<Long> cids){
         return ResponseEntity.ok(storeService.insertStore(store,cids));
     }
 
@@ -32,7 +33,7 @@ public class StoreController {
      * @param storeVo
      */
     @PutMapping("/update")
-    public ResponseEntity<Integer> updateStore(StoreVo storeVo){
+    public ResponseEntity<Integer> updateStore(@RequestBody StoreVo storeVo){
         return ResponseEntity.ok(storeService.updateStore(storeVo));
     }
 

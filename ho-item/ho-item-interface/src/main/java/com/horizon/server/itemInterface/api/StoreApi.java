@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface StoreApi {
 
-    @GetMapping("store/{sid}")
+    @GetMapping("store/query/{sid}")
     Store queryStoreBySid(@PathVariable("sid") Long sid);
 
-    @GetMapping("store/list")
+    @GetMapping("store/query/list")
     List<Store> queryStoresBySids(@RequestParam("sids") List<Long> sids);
 }

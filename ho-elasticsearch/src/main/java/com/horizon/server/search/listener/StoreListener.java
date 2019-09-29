@@ -29,7 +29,7 @@ public class StoreListener {
     }
 
     @RabbitListener(bindings = @QueueBinding(
-            value = @Queue(name = "ho.search.insert.queue",durable = "true"),
+            value = @Queue(name = "ho.search.delete.queue",durable = "true"),
             exchange = @Exchange(name = "ho.item.exchange",
                     type = ExchangeTypes.TOPIC,
                     ignoreDeclarationExceptions = "true"),
