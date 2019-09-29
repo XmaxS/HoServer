@@ -1,7 +1,6 @@
-package com.horizon.server;
+package com.horizon.server.search;
 
-import com.horizon.server.search.HoSearchApplication;
-import com.horizon.server.search.pojo.Store;
+import com.horizon.server.search.pojo.IndexStore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,15 +8,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@SpringBootTest(classes = HoSearchApplication.class)
 @RunWith(SpringRunner.class)
-public class IndexCreate {
+@SpringBootTest
+public class HoSearchApplicationTest {
 
     @Autowired
     private ElasticsearchTemplate template;
 
     @Test
-    public void createIndex(){
-        template.createIndex(Store.class);
+    public void createdIndex(){
+        template.createIndex(IndexStore.class);
     }
+
 }

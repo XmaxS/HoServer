@@ -10,22 +10,26 @@
         <module name="ho-registry" />
         <module name="ho-item-service" />
         <module name="ho-common" />
-        <module name="ho-search" />
+        <module name="ho-elasticsearch" />
         <module name="ho-gateway" />
         <module name="ho-item-interface" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ho-Common" target="1.8" />
+      <module name="asdfasdf" target="1.8" />
       <module name="Ho-Common" target="1.8" />
+      <module name="ho-Common" target="1.8" />
       <module name="ho-register" target="1.8" />
+      <module name="ho-search" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Ho-Common" options="-parameters" />
+      <module name="asdfasdf" options="-parameters" />
       <module name="ho-Common" options="-parameters" />
       <module name="ho-common" options="-parameters" />
+      <module name="ho-elasticsearch" options="-parameters" />
       <module name="ho-gateway" options="-parameters" />
       <module name="ho-item" options="-parameters" />
       <module name="ho-item-interface" options="-parameters" />

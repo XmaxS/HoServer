@@ -2,12 +2,15 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asdfasdf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-elasticsearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-gateway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-item" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-item/ho-item-interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-item/ho-item-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-search" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-search" charset="UTF-8" />
   </component>
 </project>

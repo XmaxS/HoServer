@@ -4,7 +4,6 @@ import com.horizon.server.itemInterface.pojo.Store;
 import com.horizon.server.itemInterface.vo.StoreVo;
 import com.horizon.server.itemService.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,30 +22,27 @@ public class StoreController {
      * @param cids
      * @return
      */
-    @PostMapping
-    public ResponseEntity<Void> insertStore(Store store , @RequestParam("cids") List<Long> cids){
-        storeService.insertStore(store,cids);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    @PostMapping("/insert")
+    public ResponseEntity<Integer> insertStore(Store store , @RequestParam("cids") List<Long> cids){
+        return ResponseEntity.ok(storeService.insertStore(store,cids));
     }
 
     /**
      * 更新店铺
      * @param storeVo
      */
-    @PutMapping
-    public ResponseEntity<Void> updateStore(StoreVo storeVo){
-        storeService.updateStore(storeVo);
-        return ResponseEntity.ok().build();
+    @PutMapping("/update")
+    public ResponseEntity<Integer> updateStore(StoreVo storeVo){
+        return ResponseEntity.ok(storeService.updateStore(storeVo));
     }
 
     /**
      * 删除店铺
      * @param sid
      */
-    @DeleteMapping("sid/{sid}")
-    public ResponseEntity<Void> deleteStore(@PathVariable("sid") Long sid){
-        storeService.deleteStore(sid);
-        return ResponseEntity.ok().build();
+    @DeleteMapping("/delete/sid/{sid}")
+    public ResponseEntity<Integer> deleteStore(@PathVariable("sid") Long sid){
+        return ResponseEntity.ok(storeService.deleteStore(sid));
     }
 
     /**
@@ -54,7 +50,7 @@ public class StoreController {
      * @param cid
      * @return
      */
-    @GetMapping("cid/{cid}")
+    @GetMapping("/query/cid/{cid}")
     public ResponseEntity<List<Store>> queryStoreByCid(@PathVariable("cid") Long cid){
         return ResponseEntity.ok(storeService.queryStoreByCid(cid));
     }
@@ -64,7 +60,7 @@ public class StoreController {
      * @param sid
      * @return
      */
-    @GetMapping("{sid}")
+    @GetMapping("/query/{sid}")
     public ResponseEntity<Store> queryStoreBySid(@PathVariable("sid") Long sid){
         return ResponseEntity.ok(storeService.queryStoreBySid(sid));
     }
@@ -74,7 +70,7 @@ public class StoreController {
      * @param sids
      * @return
      */
-    @GetMapping("list")
+    @GetMapping("/query/list")
     public ResponseEntity<List<Store>> queryStoreBySids(@RequestParam("sids") List<Long> sids){
         return ResponseEntity.ok(storeService.queryStoreBySids(sids));
     }

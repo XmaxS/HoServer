@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface StoreService {
 
-    void insertStore(Store store , List<Long> cids);
+    Integer insertStore(Store store , List<Long> cids);
 
-    void updateStore(StoreVo storeVo);
+    Integer updateStore(StoreVo storeVo);
 
-    void deleteStore(Long sid);
+    Integer deleteStore(Long sid);
 
     List<Store> queryStoreByCid(Long cid);
 

@@ -10,7 +10,8 @@ import java.util.Date;
 
 @Data
 @Document(indexName = "store", type = "docs" ,shards = 1, replicas = 1)
-public class Store {
+public class IndexStore {
+
     @Id
     private Long id;
 
@@ -24,4 +25,5 @@ public class Store {
     private Double longitude;
     private Double latitude;
     private Date createTime;
+
 }

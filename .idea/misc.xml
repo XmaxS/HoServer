@@ -5,13 +5,17 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/ho-search/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Ho-Common/pom.xml" />
+        <option value="$PROJECT_DIR$/asdfasdf/pom.xml" />
         <option value="$PROJECT_DIR$/ho-Common/pom.xml" />
+        <option value="$PROJECT_DIR$/ho-gateway/ho-search/pom.xml" />
         <option value="$PROJECT_DIR$/ho-register/pom.xml" />
+        <option value="$PROJECT_DIR$/ho-search/pom.xml" />
       </set>
     </option>
   </component>

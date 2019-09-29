@@ -6,22 +6,29 @@ import com.horizon.server.itemInterface.pojo.Store;
 import com.horizon.server.itemInterface.vo.StoreVo;
 import com.horizon.server.itemService.mapper.StoreMapper;
 import com.horizon.server.itemService.service.StoreService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+
 import java.util.List;
 
 @Service
+@Slf4j
 public class StoreServiceImpl implements StoreService {
 
     @Autowired
     private StoreMapper storeMapper;
 
+    @Autowired
+    private AmqpTemplate amqpTemplate;
+
     @Transactional
     @Override
-    public void insertStore(Store store, List<Long> cids) {
+    public Integer insertStore(Store store, List<Long> cids) {
         store.setId(null);
         int resultCount = storeMapper.insert(store);
         if (resultCount == 0){
@@ -34,11 +41,15 @@ public class StoreServiceImpl implements StoreService {
                 throw new HoException(ExceptionEnums.Store_CREATE_FAILED);
             }
         }
+
+        sendMessage(store.getId(),"insert");
+
+        return resultCount;
     }
 
     @Transactional
     @Override
-    public void updateStore(StoreVo storeVo) {
+    public Integer updateStore(StoreVo storeVo) {
 
         Store store = new Store();
         store.setId(storeVo.getId());
@@ -65,11 +76,15 @@ public class StoreServiceImpl implements StoreService {
             }
         }
 
+        sendMessage(store.getId(),"update");
+
+        return resultCount;
+
     }
 
     @Transactional
     @Override
-    public void deleteStore(Long sid) {
+    public Integer deleteStore(Long sid) {
 
         int resultCount = storeMapper.deleteByPrimaryKey(sid);
         if (resultCount == 0){
@@ -81,6 +96,10 @@ public class StoreServiceImpl implements StoreService {
         if (resultCount == 0){
             throw new HoException(ExceptionEnums.DELETE_STORE_EXCEPTION);
         }
+
+        sendMessage(sid,"delete");
+
+        return resultCount;
 
     }
 
@@ -115,4 +134,18 @@ public class StoreServiceImpl implements StoreService {
         }
         return storeList;
     }
+
+    /**
+     * 封装发送到消息队列的方法
+     * @param id
+     * @param type
+     */
+    private void sendMessage(Long id, String type){
+        try {
+            amqpTemplate.convertAndSend("item" + type, id);
+        }catch (Exception e){
+            log.error("{}店铺消息发送异常，店铺ID：{}",type,id,e);
+        }
+    }
+
 }

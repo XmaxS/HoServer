@@ -1,6 +1,7 @@
 package com.horizon.server.search.service;
 
 import com.horizon.server.itemInterface.pojo.Store;
+import com.horizon.server.search.pojo.IndexStore;
 import com.horizon.server.search.client.StoreClient;
 import com.horizon.server.search.repository.StoreRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -9,8 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
-@Service
 @Slf4j
+@Service
 public class SearchService {
 
     @Autowired
@@ -32,7 +33,17 @@ public class SearchService {
             throw new RuntimeException();
         }
 
-        storeRepository.save(store);
+        IndexStore indexStore = new IndexStore();
+
+        indexStore.setId(store.getId());
+        indexStore.setName(store.getName());
+        indexStore.setImage(store.getImage());
+        indexStore.setCreateTime(store.getCreateTime());
+        indexStore.setLetter(store.getLetter());
+        indexStore.setLongitude(store.getLongitude());
+        indexStore.setLatitude(store.getLatitude());
+
+        storeRepository.save(indexStore);
 
     }
 

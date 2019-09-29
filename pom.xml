@@ -12,7 +12,7 @@
         <module>ho-registry</module>
         <module>ho-gateway</module>
         <module>ho-item</module>
-        <module>ho-search</module>
+        <module>ho-elasticsearch</module>
     </modules>
     <packaging>pom</packaging>
 
