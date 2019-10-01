@@ -16,6 +16,8 @@ public enum ExceptionEnums {
     STORE_NOT_FOUND(404, "店铺查询失败"),
 
     CATEGORY_NOT_FOUND(204, "分类未查询到"),
+
+    INVALID_FILE_FORMAT(400, "文件格式错误"),
     ;
     private int code;
     private String msg;

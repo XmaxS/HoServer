@@ -13,6 +13,7 @@
         <module>ho-gateway</module>
         <module>ho-item</module>
         <module>ho-elasticsearch</module>
+        <module>ho-upload</module>
     </modules>
     <packaging>pom</packaging>
 

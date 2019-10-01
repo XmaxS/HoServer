@@ -10,6 +10,7 @@
         <module name="ho-registry" />
         <module name="ho-item-service" />
         <module name="ho-common" />
+        <module name="ho-upload" />
         <module name="ho-elasticsearch" />
         <module name="ho-gateway" />
         <module name="ho-item-interface" />
@@ -37,6 +38,7 @@
       <module name="ho-register" options="-parameters" />
       <module name="ho-registry" options="-parameters" />
       <module name="ho-search" options="-parameters" />
+      <module name="ho-upload" options="-parameters" />
     </option>
   </component>
 </project>
