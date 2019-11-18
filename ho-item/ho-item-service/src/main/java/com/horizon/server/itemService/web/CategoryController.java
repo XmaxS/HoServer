@@ -30,7 +30,7 @@ public class CategoryController {
 
     /**
      * 根据分类的Ids查询分类
-     * @param ids
+     * @param cids
      * @return
      */
     @GetMapping("list/cids")
