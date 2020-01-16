@@ -3,12 +3,23 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-elasticsearch" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-elasticsearch/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-item" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-item/ho-item-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-item/ho-item-interface/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-item/ho-item-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-item/ho-item-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-item/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-item/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-registry/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ho-upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ho-upload/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>
